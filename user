@@ -1,0 +1,58 @@
+package umldigram;
+
+public class User {
+	private String name;
+	private long cno;
+	private String gender;
+	public String getName() {
+		return name;
+	}
+	
+	public long getCno() {
+		return cno;
+	}
+	
+	public String getGender() {
+		return gender;
+	}
+	
+	User()
+	{
+		System.out.println();
+	}
+	User(String name){
+		this();
+		this.name=name;
+	}
+	User(String name,long cno,String gender){
+		
+		this(name);
+		this.cno=cno;
+		this.gender=gender;
+	}
+	
+	
+	
+	void userDetails() {
+		
+		
+		System.out.println("Name:"+name);
+		System.out.println("Contact NO:"+cno);
+		System.out.println("Gender:"+gender);
+	}
+	
+	public String toString() {
+		return name+""+cno+""+gender;
+	}
+	public boolean equals(Object o) {
+		User u=(User)o;
+		return this.name.equals(u.name)&&this.cno==u.cno&&this.gender.equals(u.gender);
+	}
+	public int hashCode() {
+		
+		
+		return name.hashCode()+((Long)cno).hashCode()+gender.hashCode();
+	}
+	
+
+}
