@@ -1,0 +1,67 @@
+package umldigram;
+import java.util.Scanner;
+public class AirportDriver {
+
+	public static void main(String[] args) {
+		
+		Airport a=new Airport();
+		Scanner sc=new Scanner(System.in);
+		boolean exit=true;
+		while(exit) {
+			
+			
+			
+			System.out.println("\n 1.Book Ticket\n 2.Cancel Ticket\n 3.Modify Ticket\n 4.Ticket Details\n Enter your choice:");
+			int n=sc.nextInt();
+			
+			switch(n) {
+			
+			case 1:
+				System.out.println("enter a name:");
+				String name=sc.next();
+				System.out.println("enter a conatct number:");
+				long cno=sc.nextLong();
+				System.out.println("enetr a gender:");
+				String gender=sc.next();
+				System.out.println("enter ticket number");
+				int ticketNo=sc.nextInt();
+				System.out.println("enter  boarding");
+				String boarding =sc.next();
+				System.out.println("enter destination");
+				String destination=sc.next();
+				a.BookTicket(new User(name,cno,gender),new Ticket(ticketNo,boarding,destination));
+				break;
+			case 2:
+				
+				System.out.println("enter a ticket");
+				int ticketNo1=sc.nextInt();
+				a.cancelTicket(ticketNo1);
+				break;
+				
+			
+			case 3:
+				
+				System.out.println("enter ticket number");
+				int ticketNo2=sc.nextInt();
+				System.out.println("enter  boarding");
+				String boarding1 =sc.next();
+				System.out.println("enetr destination");
+				String destination1=sc.next();
+				a.modififyTicket( ticketNo2,boarding1,destination1);
+				break;
+			case 4:
+				System.out.println("enter a ticket number");
+				int ticketNo4=sc.nextInt();
+				a.ticketDetails(ticketNo4);
+				break;
+				
+			case 5:
+				  exit=false;
+	
+			default:
+				System.out.println("invalid number plz check");
+			}
+		}
+	}
+
+}
